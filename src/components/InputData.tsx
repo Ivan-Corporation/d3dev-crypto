@@ -23,7 +23,7 @@ function InputData({ cryptoData, setCryptoData }: any) {
   };
 
   return (
-    <div className=" mb-6">
+    <div className="mb-6">
       <label
         htmlFor="message"
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

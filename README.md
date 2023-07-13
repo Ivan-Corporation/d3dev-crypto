@@ -1,1 +1,6 @@
-вот здесь пусть возьмут часовки OHLCV для бинанса и отрисуют. в константах-конфигах пусть сделают что первая (или вторая, в зависимости от того в какой колонке давремя в юникстайме) колонка это даты для оси икс. Колонка обьемов может использоваться для данных по второй оси У. Первая строка данных - заголовок для таблицы.
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![GitHub stars](https://img.shields.io/github/stars/Ivan-Corporation/d3dev-crypto?style=social)
+
+# D3Dev <img src='./public/favicon.ico' width='30'/>
+
+<br/>

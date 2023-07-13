@@ -27,16 +27,34 @@ function Chart({ cryptoData }: any) {
   }) {
     return [+item.Open, +item.Close, +item.High, +item.Low];
   });
-  console.log(cryptoData);
   const options = {
     title: {
-      text: "Coin: " + cryptoData?.data[0].Symbol,
+      text: "  Coin: " + cryptoData?.data[0].Symbol,
       textStyle: {
         color: "white",
       },
     },
     legend: {
-      data: ["Data", "MA5", "MA10", "MA20", "MA30"],
+      top: 50,
+      data: [
+        "Data",
+        "MA5",
+        "MA10",
+        "MA20",
+        "MA30",
+        "Volume",
+        "VolumeUSDT",
+        "TradeCount",
+      ],
+      selected: {
+        MA5: true,
+        MA10: true,
+        MA20: true,
+        MA30: false,
+        Volume: false,
+        VolumeUSDT: false,
+        TradeCount: false,
+      },
       inactiveColor: "#777",
       textStyle: {
         color: "#ccc",
@@ -142,9 +160,41 @@ function Chart({ cryptoData }: any) {
           width: 1,
         },
       },
+      {
+        name: "Volume",
+        type: "line",
+        areaStyle: {},
+        data: cryptoData?.data.map((item: any) => item["Volume POND"]),
+        smooth: true,
+        showSymbol: false,
+        lineStyle: {
+          width: 1,
+        },
+      },
+      {
+        name: "VolumeUSDT",
+        type: "line",
+        areaStyle: {},
+        data: cryptoData?.data.map((item: any) => item["Volume USDT"]),
+        smooth: true,
+        showSymbol: false,
+        lineStyle: {
+          width: 1,
+        },
+      },
+      {
+        name: "TradeCount",
+        type: "line",
+        areaStyle: {},
+        data: cryptoData?.data.map((item: any) => item["tradecount"]),
+        smooth: true,
+        showSymbol: false,
+        lineStyle: {
+          width: 1,
+        },
+      },
     ],
   };
-
   return (
     <div className="w-full py-8 border rounded-lg shadow bg-gray-800 border-gray-700">
       <ReactEcharts option={options} style={{ height: 500 }} />
